@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@layer theme, base, components, utilities;
+
+/* Define your custom screens with CSS container queries */
+@container xs (min-width: 475px) {
+  /* You can use container queries in your CSS if needed */
+}
+
+/* Define CSS variables for colors */
+@layer base {
+  :root {
+    /* Base colors */
+   
+
+
+    --color-transparent: transparent;
+    --color-current: currentColor;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-purple: #8b31ff;
+    --color-red: #cf0000;
+    --color-green: #00ac56;
+
+    /* Indigo extended shades */
+    --color-indigo-50: #eef2ff; /* from default Tailwind indigo 50 */
+    --color-indigo-100: #e0e7ff;
+    --color-indigo-200: #c7d2fe;
+    --color-indigo-300: #a5b4fc;
+    --color-indigo-400: #818cf8;
+    --color-indigo-500: #6366f1;
+    --color-indigo-600: #4f46e5;
+    --color-indigo-700: #4338ca;
+    --color-indigo-800: #3730a3;
+    --color-indigo-900: #312e81;
+
+    /* Your custom indigo shades */
+    --color-indigo-light: #9f55ff;
+    --color-indigo-dark: #7000ff;
+
+    /* Gray extended shades */
+    --color-gray-50: #f9fafb; /* default gray */
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+
+    /* Custom light grays */
+    --color-gray-light-1: #f0f0f0;
+    --color-gray-light-2: #dbdbdb;
+    --color-gray-light-3: #aaaaaa;
+    --color-gray-light-4: #8a8a8a;
+
+    /* Custom dark grays */
+    --color-gray-dark-1: #323133;
+    --color-gray-dark-2: #242225;
+    --color-gray-dark-3: #1e1b20;
+    --color-gray-dark-4: #1a171e;
+    --color-gray-dark-5: #120e16;
+
+    /* Font families using CSS variables */
+    --font-sans: var(--font-calibre), system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular,
+      Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* Animation timings */
+    --animation-meteor-duration: 5s;
+  }
+  
+  /* Set default fonts on body or other elements (optional) */
+  body {
+      font-family: var(--font-sans);
+    }
+}
+
+/* Use @theme directive to extend Tailwind with your variables */
+@theme {
+    /* --- Breakpoints --- */
+    --breakpoint-xs: 29.6875rem; /* 475px / 16 */
+    /* --breakpoint-2xl: 96rem; */
+  /* The rest (sm, md, etc) are included by default, but override them here if needed. */
+
+  --breakpoint-sm: 40rem;        /* 640px */
+  --breakpoint-md: 48rem;        /* 768px */
+  --breakpoint-lg: 64rem;        /* 1024px */
+  --breakpoint-xl: 80rem;        /* 1280px */
+  --breakpoint-2xl: 96rem;       /* 1536px */
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+    /* This defines the container width at 2xl */
+  
+
+  /* --- Font families --- */
+  --font-sans: var(--font-calibre), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* --- Colors: custom palette --- */
+  --color-purple: #8b31ff;
+  --color-red: #cf0000;
+  --color-green: #00ac56;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Indigo extension (keeps the default shades; adds custom ones) */
+  --color-indigo-light: #9f55ff;
+  --color-indigo-dark: #7000ff;
+
+  /* Custom gray palette */
+  --color-gray-light-1: #f0f0f0;
+  --color-gray-light-2: #dbdbdb;
+  --color-gray-light-3: #aaaaaa;
+  --color-gray-light-4: #8a8a8a;
+
+  --color-gray-dark-1: #323133;
+  --color-gray-dark-2: #242225;
+  --color-gray-dark-3: #1e1b20;
+  --color-gray-dark-4: #1a171e;
+  --color-gray-dark-5: #120e16;
+
+  /* You do not need to set --color-transparent or --color-current; included by default */
+  
+  /* --- Animation: meteor --- */
+  --animate-meteor: meteor 5s linear infinite;
+
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+
+  
+}
+
+
+/* Optionally set base font on body */
+body {
+  font-family: var(--font-sans);
+}

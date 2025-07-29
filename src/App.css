@@ -1,0 +1,5 @@
+@import "tailwindcss";
+body {
+  font-family: 'Calibre', 'JetBrains Mono', sans-serif;
+  background: #09090b;
+}
