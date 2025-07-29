@@ -1,6 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
-
 export default {
   content: [
     "./src/pages/**/*.{js,jsx,ts,tsx}",
@@ -10,7 +9,7 @@ export default {
   ],
   theme: {
     screens: {
-      xs: "475px",
+      xs: "475px", 
       ...defaultTheme.screens,
     },
 
@@ -79,3 +78,6 @@ export default {
   },
   plugins: [],
 };
+
+
+// github testing
